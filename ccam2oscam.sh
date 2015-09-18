@@ -47,6 +47,7 @@ for i in $(cat linies.txt)
                 sed -i "s/USUARI/$usuari/g" reader.tmp
                 sed -i "s/PASSWORD/$pass/g" reader.tmp
                 sed -i "s/LABEL/Linia $servidor/g" reader.tmp
+                echo " " >> oscam.server
                 echo "#Nova Linia afegida automaticament el $(date)" >> oscam.server
                 cat reader.tmp >> oscam.server
                 rm reader.tmp
