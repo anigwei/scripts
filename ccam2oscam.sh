@@ -15,6 +15,24 @@ then
    echo "* Alerta: El fitxer oscam.server ja existeix. S'inclouran noves linies al final de tot"
 fi
 
+if [ ! -f reader.tpl.txt ];
+then
+
+        echo "* Creant reader.tpl.txt..."
+        echo "[reader]
+        label                         = LABEL
+        protocol                      = cccam
+        device                        = SERVIDOR,PORT
+        user                          = USUARI
+        password                      = PASSWORD
+        inactivitytimeout             = 30
+        group                         = 1
+        cccversion                    = 2.3.0
+        ccckeepalive                  = 1
+        cccreshare                    = 1" > reader.tpl.txt
+fi
+
+
 echo -n "* Processant..."
 
 for i in $(cat linies.txt)
